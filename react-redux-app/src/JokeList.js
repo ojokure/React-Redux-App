@@ -4,18 +4,14 @@ import App from "./App";
 import * as actionCreators from "./State/actionCreators";
 import styled from "styled-components";
 
-const StyledDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  background-color: #a9d3e9;
-  color: blue;
-  margin: 10px;
-  border-radius: 13%;
-`;
-
 const WrapDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  background-color: #a9d3e9;
+  color: white;
+  padding:20px;
+  margin: 10px;
+  border-radius: 13%;
 `;
 
 export function JokeList(props) {
@@ -23,11 +19,11 @@ export function JokeList(props) {
     <WrapDiv>
       {props.data &&
         props.data.map(el => (
-          <StyledDiv>
-            Type : {el.type}
-            <p> Set Up : {el.setup} </p>
-            <p> Punchline : {el.punchline} </p>
-          </StyledDiv>
+          <div>
+            <div> Type : {el.type} </div>
+            <div> Set Up : {el.setup} </div>
+            <div> Punchline : {el.punchline} </div>
+          </div>
         ))}
     </WrapDiv>
   );
