@@ -1,7 +1,7 @@
 import * as types from "./actions";
 
 const intialState = {
-  data: [],
+  apiData: [],
   isLoading: false,
   error: ""
 };
@@ -9,11 +9,22 @@ const intialState = {
 export function dataReducer(state = intialState, action) {
   switch (action.type) {
     case types.FETCH_DATA:
-      return {};
+      return {
+        ...state,
+        isLoading: true,
+        error: ""
+      };
     case types.FETCHED_SUCCESSFULLY:
-      return {};
+      return {
+        ...state,
+        isLoading: false,
+        apiData: action.payload
+      };
     case types.FETCH_FAILED:
-      return {};
+      return {
+        ...state,
+        error: action.payload
+      };
     default:
       return state;
   }
