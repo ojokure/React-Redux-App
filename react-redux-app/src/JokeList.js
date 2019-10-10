@@ -8,17 +8,14 @@ const StyledDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   background-color: #a9d3e9;
-  opacity:0.8;
   color: blue;
   margin: 10px;
-  justify-content: center;
-  border-radius:13%
+  border-radius: 13%;
 `;
 
 const WrapDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  flex-direction: wrap;
 `;
 
 export function JokeList(props) {
