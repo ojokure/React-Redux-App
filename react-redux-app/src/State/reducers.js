@@ -3,7 +3,8 @@ import * as types from "./actions";
 const intialState = {
   apiData: [],
   isLoading: false,
-  error: ""
+  error: "",
+  isButtonTouched: false,
 };
 
 export function dataReducer(state = intialState, action) {
@@ -12,6 +13,12 @@ export function dataReducer(state = intialState, action) {
       return {
         ...state,
         isLoading: true,
+        error: ""
+      };
+      case types.FETCH_DATA:
+      return {
+        ...state,
+        isButtonTouched: true,
         error: ""
       };
     case types.FETCHED_SUCCESSFULLY:

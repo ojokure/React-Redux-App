@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchData = () => dispatch => {
   dispatch({ type: types.FETCH_DATA });
-
+  dispatch({ type: types.WAS_BUTTON_TOUCHED });
   axios
     .get("https://official-joke-api.appspot.com/jokes/programming/ten")
     .then(res => {
